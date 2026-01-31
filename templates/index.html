@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 FREE BGMI UC & SKINS - LIMITED OFFER</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="/static/bgmi-logo.png" alt="BGMI" class="logo">
+            <h1><i class="fas fa-crown"></i> FREE 10,000 UC + MYTHIC SKINS</h1>
+            <p class="subtitle">Official Krafton BGMI Anniversary Rewards</p>
+            <div class="live-counter">
+                <i class="fas fa-bolt"></i> <span id="liveCount">18,942</span> Players Claimed Today
+            </div>
+        </div>
+
+        <!-- UC Rewards Banner -->
+        <div class="uc-banner">
+            <div class="uc-card">
+                <img src="/static/uc-coins.png" alt="UC Coins">
+                <h3>10,000 FREE UC</h3>
+                <p>Instant Top-up</p>
+                <div class="badge">HOT</div>
+            </div>
+            <div class="uc-card premium">
+                <img src="/static/mythic-skin.jpg" alt="Mythic Skin">
+                <h3>MYTHIC SKIN</h3>
+                <p>Limited Edition</p>
+                <div class="badge">NEW</div>
+            </div>
+        </div>
+
+        <!-- Claim Form -->
+        <div class="claim-box">
+            <h2><i class="fas fa-gift"></i> SELECT YOUR REWARDS</h2>
+            
+            <form action="/claim" method="POST">
+                <div class="form-section">
+                    <h3><i class="fas fa-coins"></i> UC AMOUNT</h3>
+                    <div class="uc-options">
+                        <label class="uc-option selected">
+                            <input type="radio" name="uc_amount" value="10000" checked>
+                            <div class="uc-box">
+                                <span class="uc-number">10,000</span>
+                                <span class="uc-label">UC</span>
+                            </div>
+                        </label>
+                        <label class="uc-option">
+                            <input type="radio" name="uc_amount" value="5000">
+                            <div class="uc-box">
+                                <span class="uc-number">5,000</span>
+                                <span class="uc-label">UC</span>
+                            </div>
+                        </label>
+                        <label class="uc-option">
+                            <input type="radio" name="uc_amount" value="2500">
+                            <div class="uc-box">
+                                <span class="uc-number">2,500</span>
+                                <span class="uc-label">UC</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-tshirt"></i> SELECT SKINS</h3>
+                    <div class="skin-options">
+                        <label class="skin-option">
+                            <input type="checkbox" name="mythic_skin" value="yes" checked>
+                            <div class="skin-box">
+                                <i class="fas fa-crown"></i>
+                                <span>Mythic Skin Set</span>
+                            </div>
+                        </label>
+                        <label class="skin-option">
+                            <input type="checkbox" name="glacier" value="yes" checked>
+                            <div class="skin-box">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Glacier M416</span>
+                            </div>
+                        </label>
+                        <label class="skin-option">
+                            <input type="checkbox" name="level_pass" value="yes" checked>
+                            <div class="skin-box">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span>Level 100 Royale Pass</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="claim-btn">
+                    <i class="fas fa-rocket"></i> CLAIM FREE UC NOW
+                </button>
+            </form>
+
+            <div class="timer-box">
+                <p><i class="fas fa-clock"></i> Offer Ends In: <span id="timer">24:59:59</span></p>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <p class="small">Limited to first 10,000 players only</p>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h4>100% Safe</h4>
+                <p>Official BGMI Partner</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-bolt"></i>
+                <h4>Instant Delivery</h4>
+                <p>Within 5 minutes</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <h4>24/7 Support</h4>
+                <p>Live Chat Available</p>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials">
+            <h3><i class="fas fa-star"></i> PLAYER REVIEWS</h3>
+            <div class="testimonial">
+                <p>"Got 10k UC instantly! Working 2024!" - ProPlayer</p>
+                <span class="rating">★★★★★</span>
+            </div>
+            <div class="testimonial">
+                <p>"Mythic skin is amazing! Legit site!" - BGMI_God</p>
+                <span class="rating">★★★★★</span>
+            </div>
+            <div class="testimonial">
+                <p>"Free UC actually works! Thank you!" - NoobMaster69</p>
+                <span class="rating">★★★★★</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>This is an official Krafton BGMI anniversary event. Not affiliated with Google Play or App Store.</p>
+            <p class="small">© 2024 Krafton Inc. Battlegrounds Mobile India. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Live counter
+        let userCount = 18942;
+        setInterval(() => {
+            userCount += Math.floor(Math.random() * 3) + 1;
+            document.getElementById('liveCount').textContent = userCount.toLocaleString();
+        }, 3000);
+
+        // Timer
+        let timeLeft = 24 * 60 * 60; // 24 hours
+        const timerElement = document.getElementById('timer');
+        const progressElement = document.getElementById('progress');
+        
+        function updateTimer() {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            
+            timerElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            const progressPercent = 100 - (timeLeft / (24 * 60 * 60) * 100);
+            progressElement.style.width = progressPercent + '%';
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            }
+        }
+        updateTimer();
+
+        // UC selection
+        document.querySelectorAll('.uc-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.uc-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+    </script>
+</body>
+</html>
